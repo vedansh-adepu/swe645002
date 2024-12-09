@@ -1,0 +1,24 @@
+# Shruthi Pachava - G01459580
+# Harika Gaddam - G01449863
+# Akshitha Theretupally - G01472457
+# Vamsi Krishna Maram - G01478991
+# Kubernetes service file for cluster1 
+apiVersion: v1
+kind: Service
+metadata:
+  name: surveyform-service
+  labels:
+    app: surveyform-springboot
+spec:
+  selector:
+    app: surveyform-springboot  
+  type: NodePort 
+  ports:
+    - port: 8080        
+      targetPort: 8080   
+      protocol: TCP
+      name: http         
+    - port: 443         
+      targetPort: 443   
+      protocol: TCP
+      name: https        
